@@ -2,7 +2,7 @@ body {
     background-image: url('Background.png');
 }
 
-.window, .window2 {
+.window, .window2, .window3 {
     position: absolute;
     border: 1px solid #000;
     background-color: #f0f0f0;
@@ -17,7 +17,7 @@ body {
     height: 200px;
 }
 
-.window2 {
+.window2, .window3 {
     width: 500px;
     height: 500px;
 }

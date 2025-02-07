@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url('background.png');
+            background-size: cover;
+        }
+
+        .window {
+            position: absolute;
+            border: 1px solid #000;
+            background-color: #f0f0f0;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            overflow: hidden;
+        }
+
+.header {
+    height: 30px;
+    background-color: #ccc;
+    padding: 5px;
+    text-align: center;
+}
+    </style>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+            if (password === '**********') {
+                window.location.href = 'principal.html';
+            } else {
+                alert('Incorrect Password!');
+            }
+        }
+
+        function limitPasswordLength(event) {
+            var input = event.target;
+            if (input.value.length >= 10) {
+                checkPassword();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="window" style="width: 300px; height: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="header">Login</div>
+         <form onsubmit="return false;">
+            <label for="username">Username: </label>
+            <label name="username">Admin</label><br><br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" maxlength="10" oninput="limitPasswordLength(event)"><br><br>
+        </form>
+    </div>
+</body>
+</html>

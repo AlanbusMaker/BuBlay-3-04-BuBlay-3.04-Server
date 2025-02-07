@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sola 97</title>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="Sola 97 Favicon.ico">
+
+<style>
+body {
+    background-color: #ddd;
+    font-family: Times New Roman, Centrury Gothic;
+}
+
+.windows-95 {
+    background-color: #010180;
+    padding: 2px;
+}
+
+.close {
+    border: none;
+    background: none;
+}
+
+label {
+    color: #fff;
+    font-size: 24px;
+    float: left;
+    margin-right: 1000px;
+}
+
+.container {
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <input class="search-input" type="text" id="url-input" placeholder="Enter URL">  <button id="go-button">Go</button>  <button onclick="goHome()">Home</button>  <button onclick="xenosoftSite()">Open Xenosoft Site</button>  <button onclick="goBack()">◀</button>  <button onclick="about()">⁝</button>
+</div>
+<iframe id="page-content" width="100%" height="600px"></iframe>
+
+<script>
+const urlInput = document.getElementById('url-input');
+const goButton = document.getElementById('go-button');
+const pageContent = document.getElementById('page-content');
+
+goButton.addEventListener('click', () => {
+    const url = urlInput.value;
+    pageContent.src = url;
+});
+
+function goHome() {
+  pageContent.src = "https://web.archive.org/web/19970505103337/http://www.yahoo.com/"; // Use the existing "page-content" id
+}
+
+function xenosoftSite() {
+  pageContent.src = "Xenographic Soft site.html"; // Use the existing "page-content" id
+}
+
+function about() {
+  window.open("About.html", "About Sola 97", "width=400px,height=600px,left=200,top=200,right=200");
+}
+
+// Função para adicionar um item ao histórico
+function addToHistory(url) {
+    let history = JSON.parse(localStorage.getItem('history')) || [];
+    history.push(url);
+    localStorage.setItem('history', JSON.stringify(history));
+}
+
+// Função para voltar para a página anterior
+function goBack() {
+    let history = JSON.parse(localStorage.getItem('history')) || [];
+    if (history.length > 1) {
+        history.pop(); // Remove a última página visitada
+        document.getElementById('myIframe').src = history[history.length - 1];
+        localStorage.setItem('history', JSON.stringify(history));
+    }
+}
+
+// Limpar o histórico ao recarregar a página
+window.onload = function() {
+    localStorage.removeItem('history');
+};
+
+// Adicionar um listener para capturar as mudanças de URL no iFrame
+document.getElementById('myIframe').addEventListener('load', function() {
+    addToHistory(this.contentWindow.location.href);
+});
+</script>
+</body>
+</html>

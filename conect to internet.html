@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração de Conexão à Internet</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: navy;
+        }
+        form {
+            border: 2px solid #0000cc;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            background-color: #f0f0f0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #000000;
+        }
+        button {
+            background-color: #cccccc;
+            color: #000000;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #999999;
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Configuração de Conexão à Internet</h1>
+    <form id="setupForm" onsubmit="return handleSubmit()">
+        <div class="step active" id="step1">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="button" onclick="nextStep(2)">Próximo</button>
+        </div>
+
+        <div class="step" id="step2">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <button type="button" onclick="nextStep(3)">Próximo</button>
+        </div>
+
+        <div class="step" id="step3">
+            <label for="usuario">Usuário:</label>
+            <input type="text" id="usuario" name="usuario" required>
+            <button type="button" onclick="nextStep(4)">Próximo</button>
+        </div>
+
+        <div class="step" id="step4">
+            <label for="navegador">Navegador Padrão:</label>
+            <select id="navegador" name="navegador">
+                <option value="netscape">Netscape</option>
+                <option value="sola97">Sola 97</option>
+            </select>
+            <button type="submit">Configurar</button>
+        </div>
+    </form>
+
+    <script>
+        function nextStep(step) {
+            const currentStep = document.querySelector('.step.active');
+            currentStep.classList.remove('active');
+            document.getElementById('step' + step).classList.add('active');
+        }
+
+        function handleSubmit() {
+            const navegador = document.getElementById('navegador').value;
+            if (navegador === 'netscape') {
+                window.location.href = 'https://www.dejavu.org/1995win.htm';
+                return false;
+            }
+            return true;
+        }
+
+        function handleSubmit() {
+            const navegador = document.getElementById('navegador').value;
+            if (navegador === 'sola97') {
+                window.location.href = 'Sola 97.html';
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BUBLAY 3.04</title>
+    <title>BUBLAY 3.04 SERVER</title>
     <link rel="stylesheet" href="principalstyle.css">
 </head>
 <body>
@@ -9,10 +9,11 @@
         <div class="header">WELCOME!<button class="close-button">×</button></div>
         <div class="content">
             <img src="Welcome.png" alt="Welcome Image">
-            <p>Welcome to BuBlay 3.04! See new features:</p>
+            <p>Welcome to BuBlay 3.04 Server! See new features:</p>
             <ul>
                 <li>In 1997, Softwaresonic introduced a new Graphic Interface, and BuBlay can't be left out of this new trend!</li>
                 <li>Softwaresonic offers options to shut down the PC from the desktop, and BuBlay can't be left out of this new trend!</li>
+	 <li>This is the first Softwaresonic-like Operating System for Server!</li>
             </ul>
         </div>
     </div>
@@ -20,7 +21,7 @@
     <div class="custom-menu">
         <a href="shutdowning.html">Shutdown</a>
         <a href="D:\NÃO APAGUE ESSA PASTA PELA AMOR DE DEUS\Xenosoft Userpacn 97\BUBLAY SOFTWARESONIC 1.0 1988\boot.html">Uninstall BuBlay 3.04</a>
-        <a href="#">Option 3</a>
+        <a href="#" id="internetcon">Conect to Internet</a>
     </div>
 
     <div class="window" id="window1">
@@ -45,6 +46,36 @@
         <div class="header">Textam 97</div>
         <div class="content"><textarea class="text"></textarea></div>
     </div>
+    
+    <div class="window2" id="internetwin" style="display: none">
+	<div class="header">Conecct to Internet</div>
+	<div class="content">
+		<iframe src="conect to internet.html" width="450px" height="450px"></iframe>
+	</div>
+    </div>
+    
+    <div class="window3" id="idle" style="display: block">
+        <div class="header">Idle</div>
+        <div class="content">
+
+  <label for="PCname">PC Name:</label>
+  <input type="text" name="PCname" id="PCname" />
+
+  <label for="OS">PC's Operating System:</label>
+  <input type="text" name="OS" id="OS" />
+
+  <label for="PCtype">PC Type:</label>
+  <select name="PCtype" id="PCtype">
+    <option value="PC">PC</option>
+    <option value="Mac">Mac</option>
+    <option value="PC with BuBlay Server">PC with BuBlay Server</option>
+  </select>
+
+  <button type="button" onclick="createPC()">Create a PC</button>
+
+  <div id="Computers"></div>
+         </div>
+     </div>
     <script src="principalscript.js"></script>
 </body>
 </html>
