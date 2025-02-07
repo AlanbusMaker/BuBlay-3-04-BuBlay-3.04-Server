@@ -1,0 +1,10 @@
+======================WELCOME TO BUBLAY 3.04!======================
+Welcome! See the featrues:
+
+1. The Softwaresonic in 1996, developed the SonicUI 1, and, launched in 1997. And BuBlay added SonicUI 1 to BuBlay 3.04!
+
+2. Windows: No, I Not talking of the Microsoft Windows, I'am talking of the Windows, a SonicUI 1 featrue. You can close the windows. (exept the APPLICATIONS).
+
+3. Power Bar: The Power Bar is a recourse and have 3 options: Shutdown PC, Uninstall BuBlay (with cautelus) and Restart.
+
+And is this. Enjoy!

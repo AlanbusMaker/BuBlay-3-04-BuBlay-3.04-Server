@@ -1,0 +1,47 @@
+body {
+    background-image: url('Background.png');
+}
+
+.window, .window2 {
+    position: absolute;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+    cursor: move;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    overflow: hidden;
+}
+
+.window {
+    width: 300px;
+    height: 200px;
+}
+
+.window2 {
+    width: 500px;
+    height: 500px;
+}
+
+.header {
+    height: 30px;
+    background-color: #ccc;
+    padding: 5px;
+    text-align: center;
+}
+
+.content {
+    padding: 10px;
+}
+
+.custom-menu {
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.text {
+    width: 300px;
+    height: 100px;
+}

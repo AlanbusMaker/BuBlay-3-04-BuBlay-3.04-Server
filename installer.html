@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BuBlay Installer</title>
+<style>
+/* Estilos globais */
+body {
+    background-image: url('Background.png');
+}
+
+/* Estilos para a janela do instalador */
+.window {
+    position: absolute;
+    width: 1530px;
+    height: 500px;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.header {
+    height: 30px;
+    background-color: #ccc;
+    padding: 0px;
+    text-align: center;
+}
+
+.content {
+    padding: 10px;
+}
+
+/* Estilos para o conteúdo da janela */
+.installer-content {
+    text-align: center;
+}
+
+.progress-bar {
+    width: 80%;
+    margin: 20px 0;
+}
+
+.message {
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<div class="window" id="window">
+    <header class="header">==================================================================================INSTALLER==============================================================================</header>
+    <main class="content">
+        <img src="Welcome.png" alt="Imagem de boas-vindas">
+        <div class="installer-content">
+            <h1>BuBlay Installer</h1>
+            <progress class="progress-bar" value="0" max="300" id="installId"></progress>
+            <div class="message" id="message"><p>MEGAWARE DESKTOP-E40I99V  -  Compatible</p>
+            <p>Intel Core i3  -  Incompatible</p></div>
+        </div>
+    </main>
+</div>
+
+<script>
+// Seleciona a barra de progresso pelo ID
+const progressBar = document.getElementById('installId');
+
+// Função para atualizar o valor da barra de progresso
+function updateProgress() {
+  let currentValue = progressBar.value;
+
+  // Incrementa o valor em 1 (ajuste conforme necessário)
+  currentValue++;
+
+  // Atualiza o valor da barra de progresso
+  progressBar.value = currentValue;
+
+ // Verifica se atingiu o valor máximo
+  if (currentValue === progressBar.max) {
+    clearInterval(interval); // Para de atualizar a barra
+    window.open("principal.html")
+  }
+}
+
+// Define o intervalo de atualização (em milissegundos)
+const interval = setInterval(updateProgress, 50); // Atualiza a cada 50ms
+
+function buVerify() {
+    document.getElementById("message").style.display = "none";
+}
+
+document.getElementById("message").style.display = "block";
+</script>
+</body>
+</html>

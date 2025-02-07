@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instalador Simulado</title>
+    <style>
+body {
+    background-color: #bfbfbf;
+}
+
+.options {
+    padding: 35px;
+    border: 2px solid #ddd;
+    height: 300px;
+    width: 800px;
+    background-color: #fff;
+}
+
+.option {
+    background-color: #fff;
+    border: none;
+    width: 800px;
+    padding: 10px;
+}
+
+.option-selected {
+    background-color: blue;
+    color: white;
+}
+
+.disk2 {
+    background-color: #fff;
+    border: none;
+    width: 800px;
+    padding: 10px;
+}
+
+.clicked {
+    background-color: blue;
+    color: white;
+}
+    </style>
+</head>
+<body>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<center>
+<div class="options">
+<h1>Select a Disk to Install BuBlay 3.04</h1>
+<button class="option">Archive://</button>
+<button class="disk2">File://</button>
+<button id="install">Install</button>
+</div>
+</center>
+
+<script>
+const optionButton1 = document.querySelector('.option');
+const optionButton2 = document.querySelector('.disk2'); // Assumindo que o botão "Disk 2" tem a classe 'disk2'
+
+optionButton1.addEventListener('click', () => {
+  optionButton1.classList.add('clicked');
+  // Remover a classe 'clicked' do botão 2, se ele tiver
+  optionButton2.classList.remove('clicked');
+});
+
+optionButton2.addEventListener('click', () => {
+  optionButton2.classList.add('clicked');
+  // Remover a classe 'clicked' do botão 1, se ele tiver
+  optionButton1.classList.remove('clicked');
+});
+
+const install = document.getElementById('install')
+
+install.addEventListener('click', () => {
+    window.open("principal.html", "Installed", "height=1006px,width=1006px");
+    window.close();
+});
+</script>
+</body>
+</html>
